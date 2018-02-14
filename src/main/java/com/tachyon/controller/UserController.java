@@ -15,17 +15,17 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user", method = RequestMethod.POST)
-    public String postUser(@RequestParam(value = "user", required = false) User user) { // TODO change to required=false
+    public String postUser(@RequestParam(value = "user", required = false) User user) { // TODO change to required=true
         return "<p>This is user section, POST method</p>, creates new User";
     }
 
     @RequestMapping(value = "/user", method = RequestMethod.PUT)
-    public String putUser(@RequestParam(value = "user", required = false) User user) { // TODO change to required=false
+    public String putUser(@RequestParam(value = "user", required = false) User user) { // TODO change to required=true
         return "<p>This is user section, PUT method</p>, update existing user  by User object.";
     }
 
     @RequestMapping(value = "/user", method = RequestMethod.DELETE)
-    public String deleteUser(@RequestParam(value = "userID", required = false) Long userID) { // TODO change to required=false
+    public String deleteUser(@RequestParam(value = "userID", required = false) Long userID) { // TODO change to required=true
         return "<p>This is user section, DELETE method</p>, delete existing user by userID.";
     }
 }
