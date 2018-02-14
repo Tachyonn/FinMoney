@@ -13,4 +13,8 @@ public class UserController {
         return "<p>This is user section, GET method</p>";
     }
 
+    @RequestMapping(value = "/user", method = RequestMethod.POST)
+    public String postUser() {
+        return "<p>This is user section, POST method</p>";
+    }
 }

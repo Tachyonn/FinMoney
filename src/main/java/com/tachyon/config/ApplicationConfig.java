@@ -21,7 +21,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-@SpringBootApplication
+@Configuration
 @PropertySource("classpath:config.properties")
 @EnableSpringDataWebSupport
 @EnableWebMvc
