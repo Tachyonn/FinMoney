@@ -2,6 +2,7 @@ package com.tachyon.config;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -21,7 +22,10 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-@Configuration
+@SpringBootApplication
+//@Configuration
+//@EnableAutoConfiguration
+//@ComponentScan
 @PropertySource("classpath:config.properties")
 @EnableSpringDataWebSupport
 @EnableWebMvc
