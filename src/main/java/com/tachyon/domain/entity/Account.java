@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ import java.util.List;
 @ToString
 @Entity
 @Table(name = "Accounts")
-public class Account {
+public class Account implements Serializable{
 
     @Id
     @GeneratedValue
