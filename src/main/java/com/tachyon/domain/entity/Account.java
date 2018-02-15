@@ -23,7 +23,7 @@ import java.util.List;
 @ToString
 @Entity
 @Table(name = "Accounts")
-public class Account implements Serializable{
+public class Account implements Serializable {
 
     @Id
     @GeneratedValue
@@ -42,7 +42,8 @@ public class Account implements Serializable{
     private String name;
     private BigInteger balance;
 
-    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL) //To self: find how to use relations in spring
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY,
+            orphanRemoval = true)
     private List<Transaction> transactions = new ArrayList<>();
 
     protected Account() {
