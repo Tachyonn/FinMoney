@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @GetMapping(path = "/user") //== @RequestMapping(value="/user", method=GET)
-    public String getUser(@RequestParam int userId) {
+    public String getUser(@RequestParam(value = "userId", required = false) Long userId) {
         return "<p>This is user section, GET method, by userId</p>"; // always @ResponseBody because of @RestController annotation
     }
 
     @PostMapping(path = "/user")
-    public String postUser(@RequestParam(value = "user", required = false) User user) { // TODO change to required=true
+    public String addUser(@RequestParam(value = "user", required = false) User user) { // TODO change to required=true
         return "<p>This is user section, POST method</p>, creates new User";
     }
 
     @PutMapping(path = "/user")
-    public String putUser(@RequestParam(value = "user", required = false) User user) { // TODO change to required=true
+    public String updateUser(@RequestParam(value = "user", required = false) User user) { // TODO change to required=true
         return "<p>This is user section, PUT method</p>, update existing user  by User object.";
     }
 
@@ -27,7 +27,7 @@ public class UserController {
     }
 
     @GetMapping(path = "/users")
-    public String getAllUsers(){
+    public String getAllUsers() {
         return "<p>This is user section, get all users.";
     }
 }

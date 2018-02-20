@@ -1,8 +1,8 @@
 package com.tachyon.config;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
@@ -21,11 +21,12 @@ import java.util.Properties;
 
 //@SpringBootApplication
 @Configuration
-@EnableAutoConfiguration
+//@EnableAutoConfiguration
 //@ComponentScan
+@ComponentScan("com.tachyon")
 @PropertySource("classpath:config.properties")
 @EnableSpringDataWebSupport
-//@EnableWebMvc
+@EnableWebMvc
 @EnableTransactionManagement
 public class ApplicationConfig extends WebMvcConfigurerAdapter {
 
