@@ -23,7 +23,7 @@ public class Category implements Serializable {
     @Column(unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "category")
+    @OneToOne(mappedBy = "category")
     private Transaction transaction;
 
     protected Category() {

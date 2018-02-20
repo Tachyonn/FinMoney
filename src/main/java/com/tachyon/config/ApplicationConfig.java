@@ -1,11 +1,8 @@
 package com.tachyon.config;
 
-import com.mysql.cj.jdbc.MysqlDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
@@ -22,20 +19,20 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-@SpringBootApplication
-//@Configuration
-//@EnableAutoConfiguration
+//@SpringBootApplication
+@Configuration
+@EnableAutoConfiguration
 //@ComponentScan
 @PropertySource("classpath:config.properties")
 @EnableSpringDataWebSupport
-@EnableWebMvc
+//@EnableWebMvc
 @EnableTransactionManagement
 public class ApplicationConfig extends WebMvcConfigurerAdapter {
 
     @Value("org.hibernate.dialect.MySQLDialect")
     private String sqlDialect;
 
-    @Value("create")
+    @Value("update")
     private String hbm2dllAuto;
 
     @Bean

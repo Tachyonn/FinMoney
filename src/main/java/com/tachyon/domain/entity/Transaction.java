@@ -34,7 +34,7 @@ public class Transaction implements Serializable {
 
     private Operation operation;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "category_id")
     private Category category;
 
